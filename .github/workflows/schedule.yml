@@ -3,7 +3,7 @@ on:
   schedule:
     # 00:00 UTC <==> 08:00(next day) GMT +08:00
     # 16:00 UTC <==> 00:00(next day) GMT +08:00
-    - cron: "*/4 * * * *"
+    - cron: "0 16 * * *"
 jobs:
   update-gist:
     runs-on: ubuntu-latest
