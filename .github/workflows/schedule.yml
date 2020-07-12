@@ -3,14 +3,14 @@ on:
   schedule:
     # 00:00 UTC <==> 08:00(next day) GMT +08:00
     # 16:00 UTC <==> 00:00(next day) GMT +08:00
-    - cron: "0 16 * * *"
+    - cron: "*/4 * * * *"
 jobs:
   update-gist:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Update gist
-        uses: matchai/waka-box@master
+        uses: fangbinwei/waka-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: fd7b41abbe59374758ef94cb94322c5d

@@ -851,6 +851,7 @@ module.exports = (function(e, t) {
       let t;
       try {
         t = await c.gists.get({ gist_id: o });
+        console.log("gist", t);
       } catch (e) {
         console.error(`Unable to get gist\n${e}`);
       }
@@ -866,6 +867,8 @@ module.exports = (function(e, t) {
         ];
         r.push(a.join(" "));
       }
+      console.log("lines", r);
+      if (r.length == 0) return;
       try {
         const e = Object.keys(t.data.files)[0];
         await c.gists.update({
@@ -1525,6 +1528,12 @@ module.exports = (function(e, t) {
   },
   215: function(e) {
     e.exports = {
+      _args: [
+        [
+          "@octokit/rest@16.36.0",
+          "/private/var/folders/d1/qzhgz90j20vbjw6t362hdy5w0000gn/T/waka-box"
+        ]
+      ],
       _from: "@octokit/rest@16.36.0",
       _id: "@octokit/rest@16.36.0",
       _inBundle: false,
@@ -1545,12 +1554,11 @@ module.exports = (function(e, t) {
       },
       _requiredBy: ["/"],
       _resolved: "https://registry.npmjs.org/@octokit/rest/-/rest-16.36.0.tgz",
-      _shasum: "99892c57ba632c2a7b21845584004387b56c2cb7",
-      _spec: "@octokit/rest@16.36.0",
-      _where: "/Users/soramorimoto/src/github.com/matchai/waka-box",
+      _spec: "16.36.0",
+      _where:
+        "/private/var/folders/d1/qzhgz90j20vbjw6t362hdy5w0000gn/T/waka-box",
       author: { name: "Gregor Martynus", url: "https://github.com/gr2m" },
       bugs: { url: "https://github.com/octokit/rest.js/issues" },
-      bundleDependencies: false,
       bundlesize: [{ path: "./dist/octokit-rest.min.js.gz", maxSize: "33 kB" }],
       contributors: [
         { name: "Mike de Boer", email: "info@mikedeboer.nl" },
@@ -1572,7 +1580,6 @@ module.exports = (function(e, t) {
         once: "^1.4.0",
         "universal-user-agent": "^4.0.0"
       },
-      deprecated: false,
       description: "GitHub REST API client for Node.js",
       devDependencies: {
         "@gimenete/type-writer": "^0.1.3",
@@ -2652,11 +2659,11 @@ module.exports = (function(e, t) {
       var a =
         cmp(this.semver, "<", e.semver, t) &&
         (this.operator === ">=" || this.operator === ">") &&
-          (e.operator === "<=" || e.operator === "<");
+        (e.operator === "<=" || e.operator === "<");
       var u =
         cmp(this.semver, ">", e.semver, t) &&
         (this.operator === "<=" || this.operator === "<") &&
-          (e.operator === ">=" || e.operator === ">");
+        (e.operator === ">=" || e.operator === ">");
       return n || i || (s && o) || a || u;
     };
     t.Range = Range;
@@ -3676,6 +3683,12 @@ module.exports = (function(e, t) {
   },
   361: function(e) {
     e.exports = {
+      _args: [
+        [
+          "axios@0.19.0",
+          "/private/var/folders/d1/qzhgz90j20vbjw6t362hdy5w0000gn/T/waka-box"
+        ]
+      ],
       _from: "axios@0.19.0",
       _id: "axios@0.19.0",
       _inBundle: false,
@@ -3695,16 +3708,14 @@ module.exports = (function(e, t) {
       },
       _requiredBy: ["/"],
       _resolved: "https://registry.npmjs.org/axios/-/axios-0.19.0.tgz",
-      _shasum: "8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8",
-      _spec: "axios@0.19.0",
-      _where: "/Users/soramorimoto/src/github.com/matchai/waka-box",
+      _spec: "0.19.0",
+      _where:
+        "/private/var/folders/d1/qzhgz90j20vbjw6t362hdy5w0000gn/T/waka-box",
       author: { name: "Matt Zabriskie" },
       browser: { "./lib/adapters/http.js": "./lib/adapters/xhr.js" },
       bugs: { url: "https://github.com/axios/axios/issues" },
-      bundleDependencies: false,
       bundlesize: [{ path: "./dist/axios.min.js", threshold: "5kB" }],
       dependencies: { "follow-redirects": "1.5.10", "is-buffer": "^2.0.2" },
-      deprecated: false,
       description: "Promise based HTTP client for the browser and node.js",
       devDependencies: {
         bundlesize: "^0.17.0",
@@ -14633,7 +14644,9 @@ module.exports = (function(e, t) {
       return (
         !!t &&
         (typeof e == "number" || h.test(e)) &&
-        e > -1 && e % 1 == 0 && e < t
+        e > -1 &&
+        e % 1 == 0 &&
+        e < t
       );
     }
     function isKey(e, t) {
